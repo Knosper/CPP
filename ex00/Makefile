@@ -6,7 +6,7 @@
 #    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/03 16:39:34 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/03 16:39:36 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/11/03 16:56:56 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,16 +14,14 @@ NAME = megaphone
 
 FLAGS = -Wall -Wextra -Werror 
 
-CC = @g++ -std=c++98
+CC = g++ -std=c++98
 
-SRC = megaphone.cpp
-
-OBJ = $(SRC:.cpp=.o)
+SRC = *.cpp
 
 all: NAME
 
-NAME: $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+NAME:
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
 	@rm -f *.o
