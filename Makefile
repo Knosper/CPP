@@ -4,7 +4,7 @@ FLAGS = -Wall -Wextra -Werror
 
 CC = g++ -std=c++98
 
-SRC = test.cpp
+SRC = megaphone.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
