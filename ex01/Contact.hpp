@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:51:27 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/06 20:08:51 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/06 22:01:03 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
-#define CPNTACT_HPP
+#define CONTACT_HPP
 
 # include <string>
 # include <iostream>
 # include <stdio.h>
-#include <string.h>
+# include <string.h>
 
 #define	LIST "index|firstname |lastname  |nickname  |"
 #define LIMIT "--------------------------------------|"
