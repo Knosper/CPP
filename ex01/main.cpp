@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 16:56:09 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/06 20:12:37 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:11:08 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main()
 		else if (save.compare("SEARCH") == 0)
 			phone_book.search_c();
 		else if (save.compare("EXIT") == 0)
-			exit(1);
+			break ;
 		else
 			std::cout << "Enter a command: ADD,SEARCH,EXIT" << std::endl;
 		if (std::cin.eof())

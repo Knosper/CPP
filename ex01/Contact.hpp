@@ -6,7 +6,7 @@
 /*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:51:27 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/06 22:01:03 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:05:37 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # include <iostream>
 # include <stdio.h>
 # include <string.h>
-
-#define	LIST "index|firstname |lastname  |nickname  |"
-#define LIMIT "--------------------------------------|"
+ 
+#define	LIST "index     |firstname |lastname  |nickname  |"
+#define LIMIT "-------------------------------------------|"
 
 class Contact
 {
