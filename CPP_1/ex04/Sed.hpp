@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 00:53:25 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/09 14:42:49 by jjesberg         ###   ########.fr       */
+/*   Created: 2022/11/09 15:38:24 by jjesberg          #+#    #+#             */
+/*   Updated: 2022/11/09 17:18:03 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+#ifndef SED_HPP
+#define SED_HPP
 
-# include <string>
-# include <iostream>
-# include "Weapon.hpp"
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <string.h>
 
-class HumanB
+class Sed
 {
 private:
-	std::string	name_b;
-	Weapon		*weapon_b;
+	std::ifstream	file1;
+	std::ofstream	file2;
 public:
-	HumanB(const std::string name);
-	~HumanB();
-	void	attack();
-	void	setWeapon(Weapon &w);
+	Sed();
+	~Sed();
+	int	start_sed(char **args);
 };
 
 #endif

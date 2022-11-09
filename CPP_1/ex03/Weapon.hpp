@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 00:53:34 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/09 01:48:42 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:52:07 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ class Weapon
 private:
 	std::string	type;
 public:
-	Weapon(std::string s);
+	Weapon(const std::string &s);
 	~Weapon();
-	std::string	getType(void);
-	void		setType(std::string t);
+	std::string	getType(void) const;
+	void		setType(const std::string &t);
 };
 
 #endif
