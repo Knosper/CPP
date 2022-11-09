@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
+/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 16:56:09 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/08 16:18:46 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/06 20:21:20 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	PhoneBook::search_c(void)
 	while (index < this->space)
 	{
 		std::cout << LIMIT << std::endl;
-		std::cout << index << "         |";
+		std::cout << index << "    |";
 		while (i < 3)
 			this->contacts[index].print_contact(i++);
 		index++;
@@ -74,14 +74,11 @@ void	PhoneBook::search_c(void)
 	std::cout << LIMIT << std::endl;
 	while (index > this->space - 1)
 	{
-		std::cout << "Enter index \nFor main menu press return twice" << std::endl;
+		std::cout << "Enter index \nor leave empty to return" << std::endl;
 		std::getline(std::cin, save);
 		if (save.compare("") == 0)
 			return ;
-		if (isdigit(save[0]))
-			index = atoi(save.c_str());
+		index = atoi(save.c_str());
 	}
-	std::cout << index << std::endl;
-	if (index < 8 && index >= 0 && index < this->space)
-		this->contacts[index].print_all();
+	this->contacts[index].print_all();
 }
