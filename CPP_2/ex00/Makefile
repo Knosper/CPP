@@ -5,18 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/08 01:51:23 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/09 19:05:56 by jjesberg         ###   ########.fr        #
+#    Created: 2022/11/09 19:05:02 by jjesberg          #+#    #+#              #
+#    Updated: 2022/11/09 19:05:37 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+
+NAME = orthodox
+
+SRC = *.cpp
 
 FLAGS = -Wall -Wextra -Werror 
 
 CC = g++ -std=c++98
-
-SRC = *.cpp
 
 all: NAME
 

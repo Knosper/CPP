@@ -6,7 +6,7 @@
 #    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 00:16:35 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/08 00:51:51 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/11/09 19:05:47 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = zombie
 
 SRC = *.cpp
 
-FLAGS = -Wall -Wextra #-Werror 
+FLAGS = -Wall -Wextra -Werror 
 
 CC = g++ -std=c++98
 
