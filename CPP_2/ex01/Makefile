@@ -3,18 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/10 13:41:46 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/10 13:42:07 by jjesberg         ###   ########.fr        #
+#    Created: 2022/11/09 19:05:02 by jjesberg          #+#    #+#              #
+#    Updated: 2022/11/10 21:24:03 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME = fix
 
 SRC = *.cpp
 
-FLAGS = -Wall -Wextra -Werror 
+FLAGS = -Wall -Wextra #-Werror 
 
 CC = g++ -std=c++98
 

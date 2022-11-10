@@ -3,79 +3,73 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 13:40:04 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/10 14:43:20 by jjesberg         ###   ########.fr       */
+/*   Created: 2022/11/09 19:04:55 by jjesberg          #+#    #+#             */
+/*   Updated: 2022/11/10 21:41:36 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Fixed.hpp"
 
-Fixed::Fixed(): f_point(0)
+Fixed::Fixed():f_point(0)
 {
-	std::cout << "Default constructor called" << std::endl;
-}
-
-Fixed::Fixed(const int n)
-{
-	this->f_point = n << this->f_bits;
-	std::cout << "Int constructor called" << std::endl;
+	std::cout << "Default contsructor called" << std::endl;
 }
 
 Fixed::Fixed(const float f)
 {
-	int res;
-	int f1 = roundf(this->f_bits);
-	int f2 = roundf(f);
+	std::cout << "Float constructor called" << std::endl;
+	this->f_point = roundf(f * (1 << this->f_bits));
+}
 
-	res = f2 << f1;
-	this->f_point = res;
+Fixed::Fixed(const int n)
+{
+	std::cout << "Int constructor called" << std::endl;
+	this->f_point = n << this->f_bits;
+}
+
+Fixed::Fixed(const Fixed &cp)
+{
+	*this = cp;
+	std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "ended" << std::endl;
-}
-
-float	Fixed::toFloat( void ) const
-{
-	float n1;
-
-	n1 = (float)(1 << this->f_bits);
-	return ((float)this->f_point / n1);
-}
-
-Fixed	&Fixed::operator=(const Fixed &f)
-{
-	std::cout << "Assignation operator called" << std::endl;
-	if (this->f_point != f.f_point)
-		this->f_point = f.getRawBits();
-	return (*this);
+	std::cout << "Destructor called" << std::endl;
 }
 
 int		Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->f_point);
 }
 
 void	Fixed::getRawBits(int const raw)
 {
-	std::cout << "getRawBits member function called:" << std::endl;
 	this->f_point = raw;
 }
 
-int	Fixed::toInt( void ) const
+Fixed	&Fixed::operator=(const Fixed &f)
 {
-	float n1;
-
-	n1 = (float)(1 << this->f_bits);
-	return ((int)roundf(this->f_point / n1));
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &f)
+		this->f_point = f.getRawBits();
+	return (*this);
 }
 
-std::ostream	&operator<<(std::ostream &s, const Fixed &f)
+std::ostream	&operator<<(std::ostream &o, Fixed const &fixed)
 {
-	s << f.toFloat();
-	return (s);
+	o << fixed.toFloat();
+	return (o);
+}
+
+float 	Fixed::toFloat( void )const
+{
+	return (this->f_point>> this->f_bits);
+}
+
+int 	Fixed::toInt( void )const
+{
+	return (this->f_point);
 }

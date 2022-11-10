@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 13:40:08 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/10 18:48:16 by jjesberg         ###   ########.fr       */
+/*   Created: 2022/11/09 19:04:57 by jjesberg          #+#    #+#             */
+/*   Updated: 2022/11/10 21:44:44 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+# pragma once
 
-# include <iostream>
-# include <cmath>
+#include <iostream>
 
 class Fixed
 {
@@ -22,12 +21,15 @@ private:
 	static const int	f_bits = 8;
 public:
 	Fixed();
+	Fixed(const Fixed &cp);
 	Fixed(const int n);
 	Fixed(const float f);
 	~Fixed();
-	int		toInt( void ) const;
-	float	toFloat( void ) const;
-	Fixed	&operator=(const Fixed &f);
-	int		getRawBits(void) const;
-	void	getRawBits(int const raw);
+	Fixed	&operator=( const Fixed &f );
+	int		getRawBits( void ) const;
+	void	getRawBits( int const raw );
+	float 	toFloat( void ) const;
+	int 	toInt( void ) const;
 };
+
+std::ostream    &operator<<(std::ostream &o, Fixed const &fixed);
