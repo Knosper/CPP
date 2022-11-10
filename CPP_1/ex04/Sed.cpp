@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Sed.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:40:40 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/09 17:36:24 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/10 23:52:41 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,20 @@ Sed::~Sed()
 int	Sed::start_sed(char **args)
 {
 	char			c;
+	const std::string filename = args[1];
 
 	file1.open(args[1]);
-	file2.open(".replace", std::ios::out);
+	file2.open(filename + ".replace", std::ios::out);
 	if (file1.fail() || file2.fail())
 	{
 		std::cout << "file error" << std::endl;
 		return (1);
 	}
 	while (file1.get(c))
+	{
+		// Wenn s1 identified ersetZe mit s2! jedes wort checken bis space or \0 ...
 		file2 << c;
+	}
 	if (file1.eof())
 		std::cout << "content copied" << std::endl;
 	file1.close();
