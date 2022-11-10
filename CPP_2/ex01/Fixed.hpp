@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:40:08 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/10 14:43:50 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:48:16 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ public:
 	Fixed	&operator=(const Fixed &f);
 	int		getRawBits(void) const;
 	void	getRawBits(int const raw);
-
 };
