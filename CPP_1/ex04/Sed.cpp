@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Sed.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
+/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:40:40 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/10 23:52:41 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/12 13:30:44 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
-Sed::Sed()
+Sed::Sed(char **args)
 {
 	std::cout << "SED started" << std::endl;
+	this->args = args;
 }
 
 Sed::~Sed()
@@ -22,25 +23,84 @@ Sed::~Sed()
 	std::cout << "SED done" << std::endl;
 }
 
-int	Sed::start_sed(char **args)
+std::string	Sed::occurrence(std::string save, std::string s1, std::string s2)
 {
-	char			c;
-	const std::string filename = args[1];
+	int			pos = -1;
 
-	file1.open(args[1]);
-	file2.open(filename + ".replace", std::ios::out);
-	if (file1.fail() || file2.fail())
+	pos = save.find(s1, 0);
+	while (pos != -1)
 	{
-		std::cout << "file error" << std::endl;
-		return (1);
+		save.erase(pos, s1.length());
+		save.insert(pos, s2);
+		pos = save.find(s1, pos + s2.length());
 	}
-	while (file1.get(c))
+	if (this->lines > 0)
 	{
-		// Wenn s1 identified ersetZe mit s2! jedes wort checken bis space or \0 ...
-		file2 << c;
+		save.insert(save.length(), "\n");
+		lines--;
+	}
+	return (save);
+}
+
+int	Sed::check_line()
+{
+	std::string		save;
+
+	while (std::getline(this->file1, save))
+	{
+		save = occurrence(save, s1, s2);
+		file2 << save;
+		save.clear();
 	}
 	if (file1.eof())
-		std::cout << "content copied" << std::endl;
+		return (0);
+	else
+		return (1);
+}
+
+void	Sed::check_text(const std::string filename)
+{
+	char	c;
+
+	lines = 0;
+	file1.open(filename.c_str());
+	if (file1.fail())
+	{
+		std::cout << "file1 error" << std::endl;
+	}
+	else
+	{
+		while (file1.get(c))
+		{
+			if (c == '\n')
+				this->lines++;
+		}
+		std::cout << "lines = " << this->lines << std::endl;
+		file1.close();
+	}
+}
+
+int	Sed::start_sed(char **args)
+{
+	const std::string 	filename = args[1];
+
+	check_text(filename);
+	this->s1.insert(0, args[2]);
+	this->s2.insert(0, args[3]);
+	strcat(args[1], ".replace");
+	file1.open(filename.c_str());
+	if (file1.fail())
+	{
+		std::cout << "file1 error" << std::endl;
+		return (1);
+	}
+	file2.open(args[1], std::ios::out);
+	if (file2.fail())
+	{
+		std::cout << "file2 error" << std::endl;
+		return (1);
+	}
+	Sed::check_line();
 	file1.close();
 	file2.close();
 	return (0);

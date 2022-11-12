@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:38:24 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/09 17:18:03 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/12 13:27:49 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,17 @@ private:
 	std::ifstream	file1;
 	std::ofstream	file2;
 public:
-	Sed();
+	int			lines;
+	char		**args;
+	std::string	s1;
+	std::string	s2;
+	Sed(char **args);
 	~Sed();
-	int	start_sed(char **args);
+	int		start_sed(char **args);
+	std::string	occurrence(std::string save, std::string s1, std::string s2);
+	int		check_line();
+	void	check_text(const std::string filename);
 };
+
 
 #endif
