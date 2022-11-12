@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:40:40 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/12 13:30:44 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/12 13:34:12 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,27 @@ Sed::Sed(char **args)
 Sed::~Sed()
 {
 	std::cout << "SED done" << std::endl;
+}
+
+void	Sed::check_text(const std::string filename)
+{
+	char	c;
+
+	lines = 0;
+	file1.open(filename.c_str());
+	if (file1.fail())
+	{
+		std::cout << "file1 error" << std::endl;
+	}
+	else
+	{
+		while (file1.get(c))
+		{
+			if (c == '\n')
+				this->lines++;
+		}
+		file1.close();
+	}
 }
 
 std::string	Sed::occurrence(std::string save, std::string s1, std::string s2)
@@ -56,28 +77,6 @@ int	Sed::check_line()
 		return (0);
 	else
 		return (1);
-}
-
-void	Sed::check_text(const std::string filename)
-{
-	char	c;
-
-	lines = 0;
-	file1.open(filename.c_str());
-	if (file1.fail())
-	{
-		std::cout << "file1 error" << std::endl;
-	}
-	else
-	{
-		while (file1.get(c))
-		{
-			if (c == '\n')
-				this->lines++;
-		}
-		std::cout << "lines = " << this->lines << std::endl;
-		file1.close();
-	}
 }
 
 int	Sed::start_sed(char **args)
