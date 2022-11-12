@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/09 19:05:02 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/12 15:50:44 by jjesberg         ###   ########.fr        #
+#    Created: 2022/11/12 15:50:34 by jjesberg          #+#    #+#              #
+#    Updated: 2022/11/12 17:14:30 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = orthodox
+NAME = clap
 
 SRC = *.cpp
 
