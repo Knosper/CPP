@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
+/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 19:04:55 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/10 21:41:36 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/12 15:32:32 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		Fixed::getRawBits(void) const
 	return (this->f_point);
 }
 
-void	Fixed::getRawBits(int const raw)
+void	Fixed::setRawBits(int const raw)
 {
 	this->f_point = raw;
 }

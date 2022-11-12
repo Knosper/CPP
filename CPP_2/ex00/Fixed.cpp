@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 19:04:55 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/10 13:35:34 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/12 15:32:50 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		Fixed::getRawBits(void) const
 	return (this->f_point);
 }
 
-void	Fixed::getRawBits(int const raw)
+void	Fixed::setRawBits(int const raw)
 {
 	std::cout << "getRawBits member function called:" << std::endl;
 	this->f_point = raw;
