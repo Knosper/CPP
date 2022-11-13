@@ -6,14 +6,19 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 03:21:37 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/13 03:41:38 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/13 16:04:41 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "FragTrap.hpp"
+# include "ClapTrap.hpp"
 
-FragTrap::FragTrap(std::string n):name(n),hit_p(100),enrgie_p(100),attack_d(30)
+FragTrap::FragTrap(std::string n)
 {
+	name = n;
+	hit_p = 100;
+	enrgie_p = 100;
+	attack_d = 30;
 	std::cout << "void changes name to " << name << " and transformed into a FragTrap" << std::endl;
 }
 

@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 15:50:32 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/13 03:49:17 by jjesberg         ###   ########.fr       */
+/*   Created: 2022/11/13 17:37:59 by jjesberg          #+#    #+#             */
+/*   Updated: 2022/11/13 17:46:02 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-# include "DiamondTrap.hpp"
+# pragma once
 
-int	main()
+# include "Animal.hpp"
+
+class WrongCat : public Animal
 {
-	DiamondTrap	Test;
+private:
 
-	return (0);
-}
+public:
+	WrongCat();
+	WrongCat(const WrongCat &c);
+	
+	~WrongCat();
+
+	WrongCat &operator=(const WrongCat &src);
+	void	makeSound()const;
+};

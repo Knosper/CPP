@@ -6,7 +6,7 @@
 #    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 15:50:34 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/13 04:23:10 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/11/13 16:11:25 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = clap
 
 SRC = *.cpp
 
-FLAGS = -Wall -Wextra #-Werror 
+FLAGS = -Wall -Wextra -Werror 
 
 CC = g++ -std=c++98
 
