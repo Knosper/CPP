@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:16:14 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/13 18:14:05 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/14 14:21:33 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat(): Animal()
 {
 	type = "Cat";
+	ptr = new Brain;
 	std::cout << "Cat constructed" << std::endl;
 }
 
@@ -26,6 +27,7 @@ Cat::Cat(const Cat &c): Animal()
 
 Cat::~Cat()
 {
+	delete ptr;
 	std::cout << "Cat deconstructed" << std::endl;
 }
 

@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 16:16:14 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/13 18:14:05 by jjesberg         ###   ########.fr       */
+/*   Created: 2022/11/13 16:16:53 by jjesberg          #+#    #+#             */
+/*   Updated: 2022/11/13 18:14:25 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Cat.hpp"
+# include "Dog.hpp"
 
-Cat::Cat(): Animal()
+Dog::Dog(): Animal()
 {
-	type = "Cat";
-	std::cout << "Cat constructed" << std::endl;
+	type = "Dog";
+	ptr = new Brain;
+	std::cout << "Dog constructed" << std::endl;
 }
 
-Cat::Cat(const Cat &c): Animal()
+Dog::Dog(const Dog &c): Animal()
 {
+	std::cout << "Dog copied" << std::endl;
 	*this = c;
-	std::cout << "Cat copied" << std::endl;
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
-	std::cout << "Cat deconstructed" << std::endl;
+	delete ptr;
+	std::cout << "Dog deconstructed" << std::endl;
 }
 
-Cat &Cat::operator=(const Cat &src)
+Dog &Dog::operator=(const Dog &src)
 {
 	*this = src;
 	return (*this);
 }
 
-void	Cat::makeSound()const
+void	Dog::makeSound()const
 {
-	std::cout << "type=" << this->type << ": miau" << std::endl;
+	std::cout << "type=" << this->type << "woof woof" << std::endl;
 }
