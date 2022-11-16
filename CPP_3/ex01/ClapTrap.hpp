@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 15:50:30 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/12 17:51:47 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/16 15:27:23 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ private:
 	unsigned int	enrgie_p;
 	unsigned int	attack_d;
 public:
-	ClapTrap(std::string n);
-	ClapTrap(ClapTrap const &obj);
 	ClapTrap();
+	ClapTrap(std::string n);
 	~ClapTrap();
 
 	void			attack(const std::string &target);
