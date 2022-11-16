@@ -28,6 +28,6 @@ public:
 	virtual ~Animal();
 
 	Animal &operator=(const Animal &src);
-	std::string		getType()const;
+	std::string				getType()const;
 	virtual void			makeSound()const;
 };

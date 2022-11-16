@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:16:14 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/14 14:21:33 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:21:03 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Cat::Cat(const Cat &c): Animal()
 Cat::~Cat()
 {
 	delete ptr;
-	std::cout << "Cat deconstructed" << std::endl;
+	std::cout << "Cat destructed" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &src)

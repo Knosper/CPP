@@ -14,30 +14,30 @@
 
 Animal::Animal():type("general")
 {
-	std::cout << "Animal constructed" << std::endl;
+	std::cout << "type = " << type << "| Animal constructed" << std::endl;
 }
 
 Animal::Animal(const Animal &obj)
 {
-	std::cout << "Animal copied" << std::endl;
 	*this = obj;
+	std::cout << "type = " << type << "| Animal copied" << std::endl;
 }
 
 Animal::~Animal()
 {
-	std::cout << "Animal deconstructed" << std::endl;
+	std::cout << "type = " << type << "| Animal destructed" << std::endl;
 }
 
 Animal	&Animal::operator=(const Animal &src)
 {
+	std::cout << "Animal assign operator called" << std::endl;
+	if (this == &src)
+		return *this;
 	this->type = src.type;
 	return (*this);
 }
 
-void	Animal::makeSound()const
-{
-	std::cout << "Animal cant make noises" << std::endl;
-}
+void	Animal::makeSound()const{}
 
 std::string	Animal::getType()const
 {

@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:11:18 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/13 17:53:32 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:13:55 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,10 @@
 
 int	main()
 {
-	const Animal	*meta = new Animal();
-	const Animal	*j = new WrongCat();
-	const Animal	*i = new Cat();
-
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-
-	i->makeSound();
-	j->makeSound();
+	const Animal* meta = new Dog();
+	std::cout << meta->getType() << std::endl;
 	meta->makeSound();
+
+	delete meta;
 	return (0);
 }

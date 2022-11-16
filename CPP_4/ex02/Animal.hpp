@@ -20,6 +20,7 @@ class Animal
 protected:
 	std::string		type;
 private:
+
 public:
 	Animal();
 	Animal(const Animal &obj);
@@ -27,6 +28,6 @@ public:
 	virtual ~Animal();
 
 	Animal &operator=(const Animal &src);
-	std::string		getType()const;
+	std::string				getType()const;
 	virtual void			makeSound()const;
 };

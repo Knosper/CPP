@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 17:37:56 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/13 17:52:24 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/16 15:57:40 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ WrongCat::WrongCat(const WrongCat &c): Animal()
 
 WrongCat::~WrongCat()
 {
-	std::cout << "WrongCat deconstructed" << std::endl;
+	std::cout << "WrongCat destructed" << std::endl;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &src)

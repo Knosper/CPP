@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:16:14 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/13 18:14:05 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/16 15:59:15 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Cat::Cat(const Cat &c): Animal()
 
 Cat::~Cat()
 {
-	std::cout << "Cat deconstructed" << std::endl;
+	std::cout << "Cat destructed" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &src)
@@ -37,5 +37,5 @@ Cat &Cat::operator=(const Cat &src)
 
 void	Cat::makeSound()const
 {
-	std::cout << "type=" << this->type << ": miau" << std::endl;
+	std::cout << "type = " << this->type << ": miau" << std::endl;
 }

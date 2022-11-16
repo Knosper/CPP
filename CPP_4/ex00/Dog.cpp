@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:16:53 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/13 17:35:32 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/16 15:59:13 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Dog::Dog(const Dog &c): Animal()
 
 Dog::~Dog()
 {
-	std::cout << "Dog deconstructed" << std::endl;
+	std::cout << "Dog destructed" << std::endl;
 }
 
 Dog &Dog::operator=(const Dog &src)
@@ -37,5 +37,5 @@ Dog &Dog::operator=(const Dog &src)
 
 void	Dog::makeSound()const
 {
-	std::cout << "type=" << this->type << "woof woof" << std::endl;
+	std::cout << "type = " << this->type << ": woof woof" << std::endl;
 }

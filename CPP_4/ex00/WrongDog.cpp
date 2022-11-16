@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 17:38:17 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/13 17:51:49 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/16 15:57:54 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ WrongDog::WrongDog(const WrongDog &c): Animal()
 
 WrongDog::~WrongDog()
 {
-	std::cout << "WrongDog deconstructed" << std::endl;
+	std::cout << "WrongDog destructed" << std::endl;
 }
 
 WrongDog &WrongDog::operator=(const WrongDog &src)
