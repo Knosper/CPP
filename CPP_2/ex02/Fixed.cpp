@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:40:58 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/12 15:32:14 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:55:27 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,16 +128,14 @@ float	Fixed::operator-( Fixed f )
 
 Fixed	Fixed::operator++()
 {
-	Fixed	ret = *this;
 	this->f_point++;
-	return (ret);
+	return (*this);
 }
 
 Fixed	Fixed::operator--()
 {
-	Fixed	ret = *this;
 	this->f_point--;
-	return (ret);
+	return (*this);
 }
 
 Fixed	Fixed::operator++(int)
@@ -188,10 +186,18 @@ Fixed const	&Fixed::max(Fixed const &n1, Fixed const &n2)
 
 float 	Fixed::toFloat( void )const
 {
-	return (this->f_point>> this->f_bits);
+	return ((float)this->f_point / (float)(1 << this->f_bits));
 }
 
 int 	Fixed::toInt( void )const
 {
-	return (this->f_point);
+	return (this->f_point >> 8);
 }
+/*
+0
+0.00390625
+0.00390625
+0.00390625
+0.0078125
+10.1016
+10.1016*/

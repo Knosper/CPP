@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 19:04:55 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/12 15:32:32 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:43:05 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ std::ostream	&operator<<(std::ostream &o, Fixed const &fixed)
 
 float 	Fixed::toFloat( void )const
 {
-	return (this->f_point>> this->f_bits);
+	return ((float)this->f_point / (float)(1 << this->f_bits));
 }
 
 int 	Fixed::toInt( void )const
 {
-	return (this->f_point);
+	return (this->f_point >> 8);
 }
