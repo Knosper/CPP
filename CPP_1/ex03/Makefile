@@ -3,25 +3,33 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/09 00:53:30 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/09 15:06:08 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/11/17 20:56:36 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = human
+NAME = human_traffic
 
-FLAGS = -Wall -Wextra -Werror 
+SRC =	main.cpp	\
+		HumanA.cpp	\
+		HumanB.cpp	\
+		Weapon.cpp
 
-CC = g++ -std=c++98
+OBJS = $(SRC:%.cpp=%.o)
 
-SRC = *.cpp
+C_FLAGS = -Wall -Wextra -Werror -std=c++98
 
-all: NAME
+CC = c++
 
-NAME:
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(C_FLAGS) $(OBJS) -o $@
+
+%.o: %.cpp %.d
+	$(CC) $(C_FLAGS) -MMD -MP -c $< -o $@
 
 clean:
 	@rm -f *.o

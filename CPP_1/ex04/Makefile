@@ -3,26 +3,31 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/09 14:51:45 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/12 13:31:21 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/11/17 21:29:06 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
 NAME = sed
 
-FLAGS = -Wall -Wextra -Werror 
+SRC =	main.cpp	\
+		Sed.cpp		\
 
-CC = g++ -std=c++98
+OBJS = $(SRC:%.cpp=%.o)
 
-SRC = *.cpp
+C_FLAGS = -Wall -Wextra -Werror -std=c++98
 
-all: NAME
+CC = c++
 
-NAME:
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(C_FLAGS) $(OBJS) -o $@
+
+%.o: %.cpp %.d
+	$(CC) $(C_FLAGS) -MMD -MP -c $< -o $@
 
 clean:
 	@rm -f *.o

@@ -3,25 +3,31 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/09 19:05:02 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/12 13:38:57 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/11/17 21:50:14 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fix
 
-SRC = *.cpp
+SRC =	main.cpp	\
+		Fixed.cpp	\
 
-FLAGS = -Wall -Wextra -Werror 
+OBJS = $(SRC:%.cpp=%.o)
 
-CC = g++ -std=c++98
+C_FLAGS = -Wall -Wextra -Werror -std=c++98
 
-all: NAME
+CC = c++
 
-NAME:
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(C_FLAGS) $(OBJS) -o $@
+
+%.o: %.cpp %.d
+	$(CC) $(C_FLAGS) -MMD -MP -c $< -o $@
 
 clean:
 	@rm -f *.o

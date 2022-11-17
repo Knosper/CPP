@@ -3,25 +3,33 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 00:16:35 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/09 19:05:47 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/11/17 20:53:49 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zombie
 
-SRC = *.cpp
+SRC =	main.cpp	\
+		newZombie.cpp	\
+		randomChump.cpp	\
+		Zombie.cpp
 
-FLAGS = -Wall -Wextra -Werror 
+OBJS = $(SRC:%.cpp=%.o)
 
-CC = g++ -std=c++98
+C_FLAGS = -Wall -Wextra -Werror -std=c++98
 
-all: NAME
+CC = c++
 
-NAME:
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(C_FLAGS) $(OBJS) -o $@
+
+%.o: %.cpp %.d
+	$(CC) $(C_FLAGS) -MMD -MP -c $< -o $@
 
 clean:
 	@rm -f *.o

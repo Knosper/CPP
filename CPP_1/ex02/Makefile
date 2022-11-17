@@ -3,25 +3,30 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/09 00:34:51 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/09 00:57:21 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/11/17 20:55:02 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = brain
 
-FLAGS = -Wall -Wextra -Werror 
+SRC =	main.cpp
 
-CC = g++ -std=c++98
+OBJS = $(SRC:%.cpp=%.o)
 
-SRC = *.cpp
+C_FLAGS = -Wall -Wextra -Werror -std=c++98
 
-all: NAME
+CC = c++
 
-NAME:
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(C_FLAGS) $(OBJS) -o $@
+
+%.o: %.cpp %.d
+	$(CC) $(C_FLAGS) -MMD -MP -c $< -o $@
 
 clean:
 	@rm -f *.o

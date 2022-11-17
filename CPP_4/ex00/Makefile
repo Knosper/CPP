@@ -3,25 +3,35 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 16:11:32 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/14 15:31:15 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/11/17 22:01:56 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = poly
 
-SRC = *.cpp
+SRC =	main.cpp	\
+		Animal.cpp	\
+		Dog.cpp	\
+		Cat.cpp	\
+		WrongCat.cpp	\
+		WrongDog.cpp
 
-FLAGS = -Wall -Wextra -Werror 
+OBJS = $(SRC:%.cpp=%.o)
 
-CC = g++ -std=c++98
+C_FLAGS = -Wall -Wextra -Werror -std=c++98
 
-all: NAME
+CC = c++
 
-NAME:
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(C_FLAGS) $(OBJS) -o $@
+
+%.o: %.cpp %.d
+	$(CC) $(C_FLAGS) -MMD -MP -c $< -o $@
 
 clean:
 	@rm -f *.o
