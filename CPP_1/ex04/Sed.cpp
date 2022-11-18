@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:40:40 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/12 13:34:12 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:22:44 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,20 @@ int	Sed::start_sed(char **args)
 	Sed::check_line();
 	file1.close();
 	file2.close();
+	return (0);
+}
+
+int		Sed::check_arg(char **args)
+{
+	int	i = 0;
+	std::string	tmp;
+
+	while (i < 4)
+	{
+		tmp = std::string(args[i]);
+		if (tmp.length() == 0)
+			return (1);
+		i++;
+	}
 	return (0);
 }

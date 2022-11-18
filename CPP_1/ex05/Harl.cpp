@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:49:07 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/09 18:53:24 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:29:46 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,31 @@ void	Harl::error( void )
 void Harl::complain( std::string level )
 {
 	void    (Harl::*ptr[])( void ) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-
-	if (level.compare("DEBUG") == 0)
-		(this->*ptr[0])();
-	if (level.compare("INFO") == 0)
-		(this->*ptr[1])();
-	if (level.compare("WARNING") == 0)
-		(this->*ptr[2])();
-	if (level.compare("ERROR") == 0)
-		(this->*ptr[3])();
+	int		tmp = level.length();
+	
+	switch (tmp)
+	{
+		case (4):
+		{
+			(this->*ptr[1])();
+			return ;
+		}
+		case (7):
+		{
+			(this->*ptr[2])();
+			return ;
+		}
+		case (5):
+		{
+			tmp = level.find('E');
+			switch(tmp)
+			{
+				case (0):
+					(this->*ptr[3])();
+				case (1):
+					(this->*ptr[0])();
+			}
+			return ;
+		}
+	}
 }

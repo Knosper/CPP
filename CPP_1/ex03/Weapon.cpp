@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 00:53:32 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/09 14:50:06 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:05:55 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Weapon::~Weapon()
 	std::cout << this->type << "just broke" << std::endl;
 }
 
-std::string Weapon::getType() const
+const std::string &Weapon::getType() const
 {
 	return (this->type);
 }

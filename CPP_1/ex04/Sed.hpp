@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:38:24 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/12 13:35:26 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:17:12 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ public:
 	~Sed();
 	int				check_line();
 	int				start_sed(char **args);
+	int				check_arg(char **args);
 	std::string		occurrence(std::string save, std::string s1, std::string s2);
 	void			check_text(const std::string filename);
 };

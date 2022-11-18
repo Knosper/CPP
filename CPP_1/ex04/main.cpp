@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:51:42 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/11 14:06:53 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:24:35 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int	main(int argc, char **args)
 	if (argc == 4)
 	{
 		Sed		sed(args);
-		if(sed.start_sed(args))
+		if (sed.check_arg(args))
+			std::cout << "empty arg" << std::endl;
+		else if (sed.start_sed(args))
 			return (1);
 	}
 	else
