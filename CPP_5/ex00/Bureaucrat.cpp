@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 19:05:00 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/21 15:01:41 by jjesberg         ###   ########.fr       */
+/*   Created: 2022/11/21 13:11:14 by jjesberg          #+#    #+#             */
+/*   Updated: 2022/11/21 13:15:40 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Fixed.hpp"
+# include "Bureaucrat.hpp"
 
-int	main()
+Bureaucrat::Bureaucrat(std::string n):name(n)
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+    std::cout << "Bureaucrat [" << name << "]: constructed" << std::endl;
+}
 
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+Bureaucrat::Bureaucrat()
+{
+    name = "default";
+    std::cout << "Bureaucrat [" << name << "]: constructed" << std::endl;
+}
 
-	return (0);
+Bureaucrat::~Bureaucrat()
+{
+    std::cout << "Bureaucrat [" << name << "]: destructed" << std::endl;
 }

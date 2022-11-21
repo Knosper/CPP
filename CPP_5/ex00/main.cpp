@@ -5,23 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 19:05:00 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/21 15:01:41 by jjesberg         ###   ########.fr       */
+/*   Created: 2022/11/21 13:15:43 by jjesberg          #+#    #+#             */
+/*   Updated: 2022/11/21 13:17:43 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Fixed.hpp"
+#include "Bureaucrat.hpp"
 
-int	main()
+int     main()
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+    Bureaucrat  first("Hannes");
 
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-
-	return (0);
+    return (0);
 }

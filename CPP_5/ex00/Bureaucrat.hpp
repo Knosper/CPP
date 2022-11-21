@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 19:05:00 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/21 15:01:41 by jjesberg         ###   ########.fr       */
+/*   Created: 2022/11/21 13:11:18 by jjesberg          #+#    #+#             */
+/*   Updated: 2022/11/21 13:13:53 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Fixed.hpp"
+#pragma once
 
-int	main()
+# include <string>
+# include <iostream>
+
+class Bureaucrat
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-
-	return (0);
-}
+private:
+    std::string     name;
+    int             grade;
+public:
+    Bureaucrat(std::string n);
+    Bureaucrat();
+    ~Bureaucrat();
+};
