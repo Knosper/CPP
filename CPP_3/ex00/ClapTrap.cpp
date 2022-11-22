@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 15:50:28 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/16 15:16:33 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/22 20:58:01 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 ClapTrap::ClapTrap(std::string n):name(n),hit_p(10),enrgie_p(10),attack_d(0)
 {
 	std::cout << "ClapTrap " << n << ": is bored... Zzz" << std::endl;
+}
+
+ClapTrap::ClapTrap():name("default"),hit_p(10),enrgie_p(10),attack_d(0)
+{
+	std::cout << "ClapTrap " << name << ": is bored... Zzz" << std::endl;
 }
 
 ClapTrap::~ClapTrap()

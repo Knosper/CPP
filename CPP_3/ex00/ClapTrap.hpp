@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 15:50:30 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/12 17:14:09 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/22 20:57:28 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ private:
 	unsigned int	attack_d;
 public:
 	ClapTrap(std::string n);
+	ClapTrap();
 	~ClapTrap();
 
 	void			attack(const std::string &target);
