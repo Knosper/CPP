@@ -6,11 +6,15 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:57:57 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/22 15:58:54 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:10:33 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include "Bureaucrat.hpp"
+# include "Form.hpp"
+
 int	main()
 {
+	Form	Iso;
 	return (0);
 }

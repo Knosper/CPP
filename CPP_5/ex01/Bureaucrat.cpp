@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:11:14 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/22 15:56:26 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:33:34 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Bureaucrat::Bureaucrat(const std::string name):_name(name),_grade(150)
 {
-    std::cout << "Bureaucrat [" << _name << "]: constructed" << std::endl;
+    std::cout << "Bureaucrat [" << _name << "](grade:" << _grade << "): constructed" << std::endl;
 }
 
 Bureaucrat::Bureaucrat():_name("default"),_grade(150)
 {
-    std::cout << "Bureaucrat [" << _name << "]: constructed" << std::endl;
+    std::cout << "Bureaucrat [" << _name << "](grade:" << _grade << "): constructed" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src):_name(src.getName()),_grade(src.getGrade())
@@ -29,29 +29,30 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src):_name(src.getName()),_grade(src.ge
 
 Bureaucrat::Bureaucrat(int grade):_name("default"),_grade(grade)
 {
-    std::cout << "Bureaucrat [" << _name << "]: constructed" << std::endl;
+    std::cout << "Bureaucrat [" << _name << "](grade:" << _grade << "): constructed" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade):_name(name),_grade(grade)
 {
-    std::cout << "Bureaucrat [" << _name << "]: constructed" << std::endl;
+    std::cout << "Bureaucrat [" << _name << "](grade:" << _grade << "): constructed" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Bureaucrat [" << _name << "]: destructed" << std::endl;
+    std::cout << "Bureaucrat [" << _name << "](grade:" << _grade << "): destructed" << std::endl;
 }
 
 void	Bureaucrat::setGrade(int grade)
 {
+	std::cout << _name << ": try to set grade to: " << grade << std::endl;
 	if (grade > 150)
 		throw (Bureaucrat::GradeTooHighException());
-	if (grade < 1)
+	else if (grade < 1)
 		throw (Bureaucrat::GradeTooLowException());
 	else
 	{
+		std::cout << "Succedfully changed grade" << std::endl;
 		_grade = grade;
-    	std::cout << "Grade of [" << _name << "] set to: " << _grade << std::endl;
 	}
 }
 

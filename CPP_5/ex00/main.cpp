@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:15:43 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/22 15:55:57 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:34:26 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ int     main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	
+
 	fourth.incrementGrade(100);
 	first.incrementGrade(12);
-	six.incrementGrade(1000);
+	six.incrementGrade(12);
 
 	std::cout << first << std::endl;
 	std::cout << sec << std::endl;
