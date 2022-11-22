@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 03:20:49 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/13 03:36:15 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/23 00:39:23 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,11 @@
 class FragTrap : public ClapTrap
 {
 private:
-	std::string		name;
-	unsigned int	hit_p;
-	unsigned int	enrgie_p;
-	unsigned int	attack_d;
+	bool	high_five;
 public:
-
 	FragTrap(std::string n);
+	FragTrap(FragTrap const &obj);
+	FragTrap();
 	~FragTrap();
 	void	highFivesGuys(void);
 };

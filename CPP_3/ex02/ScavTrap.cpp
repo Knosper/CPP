@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:16:07 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/16 15:33:15 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/22 22:32:45 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,22 @@
 
 ScavTrap::ScavTrap():ClapTrap()
 {
-	name = "deafult";
-	h_points = 100;
-	energie_p = 50;
+	name = "default";
+	hit_p = 100;
+	enrgie_p = 50;
 	attack_d = 20;
-	std::cout << "ScavTrap " << name << "ScavTrap got loaded" << std::endl;
+	guard_gate = false;
+	std::cout << "ScavTrap " << name << " got loaded" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string n):ClapTrap(n)
 {
 	name = n;
-	h_points = 100;
-	energie_p = 50;
+	hit_p = 100;
+	enrgie_p = 50;
 	attack_d = 20;
-	std::cout << "ScavTrap " << name << ": copied" << std::endl;
+	guard_gate = false;
+	std::cout << "ScavTrap " << name << " got loaded" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &obj):ClapTrap(obj)
@@ -43,5 +45,6 @@ ScavTrap::~ScavTrap()
 
 void	ScavTrap::guardGate()
 {
+	guard_gate = true;
 	std::cout << "ScavTrap " << name << ": activates Gate keeper Mode!" << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 15:50:28 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/16 15:47:57 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/23 00:38:34 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,8 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	}
 	else if (tmp <= 0)
 	{
+		std::cout << "ClapTrap " << name << ": got broken " << amount << "dmg; and needs to repair itsself..." << std::endl;
 		hit_p = 0;
-		std::cout << "ClapTrap " << name << ": takes demage -> " << amount << "! " << hit_p << " hp left" << std::endl;
-		std::cout << "ClapTrap " << name << ": got broken and needs to repair itsself..." << std::endl;
 	}
 }
 
