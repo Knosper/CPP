@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:15:43 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/22 16:55:00 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/23 22:50:08 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int     main()
 	std::cout << fourth << std::endl;
 	std::cout << five << std::endl;
 	std::cout << six << std::endl;
-
+	first.decrementGrade(-800);
+	std::cout << first << std::endl;
     return (0);
 }

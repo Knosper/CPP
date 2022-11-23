@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:11:18 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/22 15:53:26 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/23 22:39:55 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,12 @@ public:
 	class GradeTooHighException : public std::exception 
 	{
     	public:
-			virtual const char * what () 
-			{
-        		return "Grade too high!";
-			}
+			virtual const char * what ();
 	};
 	class GradeTooLowException : public std::exception 
 	{
     	public:
-			virtual const char * what () 
-			{
-        		return "Grade too low!";
-			}
+			virtual const char * what ();
 	};
 };
 

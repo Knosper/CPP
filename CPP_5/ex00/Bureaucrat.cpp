@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:11:14 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/22 16:33:34 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/23 22:48:43 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void	Bureaucrat::setGrade(int grade)
 {
 	std::cout << _name << ": try to set grade to: " << grade << std::endl;
 	if (grade > 150)
-		throw (Bureaucrat::GradeTooHighException());
-	else if (grade < 1)
 		throw (Bureaucrat::GradeTooLowException());
+	else if (grade < 1)
+		throw (Bureaucrat::GradeTooHighException());
 	else
 	{
 		std::cout << "Succedfully changed grade" << std::endl;
@@ -73,6 +73,10 @@ void	Bureaucrat::incrementGrade(int in)
 	{
 		Bureaucrat::setGrade(_grade - in);
 	}
+	catch(Bureaucrat::GradeTooHighException &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	catch(Bureaucrat::GradeTooLowException &e)
 	{
 		std::cerr << e.what() << std::endl;
@@ -86,6 +90,10 @@ void	Bureaucrat::decrementGrade(int de)
 	try
 	{
 		Bureaucrat::setGrade(_grade + de);
+	}
+	catch(Bureaucrat::GradeTooLowException &e)
+	{
+		std::cerr << e.what() << std::endl;
 	}
 	catch(Bureaucrat::GradeTooHighException &e)
 	{
@@ -106,4 +114,14 @@ std::ostream	&operator<<(std::ostream &o, Bureaucrat &var)
 {
 	o << var.getName() << ", Bureaucrat grade " << var.getGrade();
 	return (o);
+}
+
+const char	*Bureaucrat::GradeTooLowException::what()
+{
+    return ("Grade too low!");
+}
+
+const char	*Bureaucrat::GradeTooHighException::what()
+{
+    return ("Grade too high!");
 }

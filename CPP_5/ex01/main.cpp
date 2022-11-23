@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:57:57 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/22 16:57:47 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/23 23:13:52 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ int	main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	std::cout << Iso << std::endl;
+	Iso.signForm(A);
 	return (0);
 }
