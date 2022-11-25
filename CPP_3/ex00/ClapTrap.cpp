@@ -6,7 +6,7 @@
 /*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 15:50:28 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/22 20:58:01 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/25 00:59:41 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ ClapTrap::ClapTrap(std::string n):name(n),hit_p(10),enrgie_p(10),attack_d(0)
 ClapTrap::ClapTrap():name("default"),hit_p(10),enrgie_p(10),attack_d(0)
 {
 	std::cout << "ClapTrap " << name << ": is bored... Zzz" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &cp):name(cp.name),hit_p(cp.hit_p),enrgie_p(cp.enrgie_p),attack_d(0)
+{
+	std::cout << "copied ClapTrap " << name << ": is bored... Zzz" << std::endl;
 }
 
 ClapTrap::~ClapTrap()

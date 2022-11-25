@@ -6,7 +6,7 @@
 /*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 15:50:30 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/22 22:21:19 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/25 01:00:35 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ protected:
 public:
 	ClapTrap();
 	ClapTrap(std::string n);
+	ClapTrap(const ClapTrap &cp);
 	~ClapTrap();
 
 	void			attack(const std::string &target);
