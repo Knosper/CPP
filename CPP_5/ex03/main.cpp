@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:57:57 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/27 09:16:49 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/27 18:23:30 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 int	main()
 {
+	/*
 	Bureaucrat *Employ = new Bureaucrat();
 	Intern *Boss = new Intern();
 
@@ -34,6 +35,16 @@ int	main()
 	delete Employ;
 	delete Boss;
 	delete Applic;
-	
+	*/
+
+	Bureaucrat	A(1);
+	Intern 		someRandomIntern;
+	Form* 		rrf;
+
+	//rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	//rrf = someRandomIntern.makeForm("presidential pardonForm", "Fry");
+	//rrf = someRandomIntern.makeForm("shrubbery creation", "Lila");
+	A.signForm(*rrf);
+	A.executeForm(*rrf);
 	return (0);
 }

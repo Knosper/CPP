@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:01:07 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/27 08:42:38 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/27 18:19:27 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ const int	Form::getExecGrade(void)const
 
 void	Form::beSigned(Bureaucrat &src)
 {
-	sleep(2);
 	if (src.getGrade() <= this->getSignGrade() && !this->getFlag())
 	{
 		std::cout << src.getName() << " signed form: " << _name << std::endl;
