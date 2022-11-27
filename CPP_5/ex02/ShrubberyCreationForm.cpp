@@ -6,11 +6,11 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:08:50 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/27 06:27:20 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/27 07:45:42 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ShrubberyCreation.hpp"
+# include "ShrubberyCreationForm.hpp"
 
 /*ShrubberyCreationForm: Required grades: sign 145, exec 137
 Create a file <target>_shrubbery in the working directory, and writes ASCII trees
@@ -18,6 +18,7 @@ inside it.*/
 
 ShrubberyCreation::ShrubberyCreation():Form("ShrubberyCreation", 145, 137)
 {
+	_target = "default target";
 	std::cout << "default ShrubberyCreation constructed" << std::endl;
 }
 
