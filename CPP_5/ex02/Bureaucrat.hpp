@@ -6,15 +6,14 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:11:18 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/24 18:37:03 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/27 05:34:40 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-# include <string>
-# include <iostream>
 # include "Form.hpp"
+
 
 class Form;
 
@@ -36,7 +35,7 @@ public:
 
 	void				setGrade(int grade);
 	void				signForm(Form &src);
-
+	void				executeForm(Form const & form);
 	const std::string	getName(void)const;
 	int					getGrade(void)const;
 

@@ -6,7 +6,7 @@
 #    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 22:05:11 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/22 16:11:19 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/11/27 06:01:19 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,9 @@ NAME = bureau
 SRC =	main.cpp	\
 		Bureaucrat.cpp	\
 		Form.cpp		\
+		PresidentialPardonForm.cpp	\
+		RobotomyRequestForm.cpp		\
+		ShrubberyCreationForm.cpp
 
 OBJS = $(SRC:%.cpp=%.o)
 

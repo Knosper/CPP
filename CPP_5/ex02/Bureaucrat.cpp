@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:11:14 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/24 18:48:40 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/27 06:32:50 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ Bureaucrat::Bureaucrat(const std::string name):_name(name),_grade(150)
     std::cout << "Bureaucrat [" << _name << "](grade:" << _grade << "): constructed" << std::endl;
 }
 
-Bureaucrat::Bureaucrat():_name("default"),_grade(150)
+Bureaucrat::Bureaucrat():_name("default Bureaucrat"),_grade(150)
 {
-    std::cout << "Bureaucrat [" << _name << "](grade:" << _grade << "): constructed" << std::endl;
+    std::cout << "[" << _name << "](grade:" << _grade << "): constructed" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src):_name(src.getName()),_grade(src.getGrade())
@@ -27,19 +27,43 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src):_name(src.getName()),_grade(src.ge
 	std::cout << "Bureaucrat copied from: " << _name << std::endl;
 }
 
-Bureaucrat::Bureaucrat(int grade):_name("default"),_grade(grade)
+Bureaucrat::Bureaucrat(int grade):_name("default Bureaucrat"),_grade(150)
 {
-    std::cout << "Bureaucrat [" << _name << "](grade:" << _grade << "): constructed" << std::endl;
+	try
+	{
+		this->setGrade(grade);
+	}
+	catch(GradeTooHighException &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	catch(GradeTooLowException &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+    std::cout << "[" << _name << "](grade:" << _grade << "): constructed" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string name, int grade):_name(name),_grade(grade)
+Bureaucrat::Bureaucrat(const std::string name, int grade):_name(name),_grade(150)
 {
-    std::cout << "Bureaucrat [" << _name << "](grade:" << _grade << "): constructed" << std::endl;
+	try
+	{
+		this->setGrade(grade);
+	}
+	catch(GradeTooHighException &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	catch(GradeTooLowException &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+    std::cout << "[" << _name << "](grade:" << _grade << "): constructed" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Bureaucrat [" << _name << "](grade:" << _grade << "): destructed" << std::endl;
+    std::cout << "[" << _name << "](grade:" << _grade << "): destructed" << std::endl;
 }
 
 void	Bureaucrat::setGrade(int grade)
@@ -100,6 +124,22 @@ void	Bureaucrat::decrementGrade(int de)
 	catch(Bureaucrat::GradeTooHighException &e)
 	{
 		std::cerr << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(Form const &form)
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch(Form::GradeTooLowException &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	catch(Form::FormFalseException &e)
+	{
+		std::cerr << e.what() << '\n';
 	}
 }
 

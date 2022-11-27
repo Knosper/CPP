@@ -6,13 +6,15 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:00:43 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/24 18:56:37 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/27 05:48:56 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Bureaucrat.hpp"
+# include <string>
+# include <iostream>
+# include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
@@ -33,6 +35,7 @@ public:
 	~Form();
 
 	void				beSigned(Bureaucrat &src);
+	virtual void 		execute(Bureaucrat const &executor) const = 0;
 
 	//getter
 	const std::string	getName(void)const;
@@ -47,6 +50,11 @@ public:
 			virtual const char *what();
 	};
 	class GradeTooLowException : public std::exception 
+	{
+    	public:
+			virtual const char *what();
+	};
+	class FormFalseException : public std::exception 
 	{
     	public:
 			virtual const char *what();

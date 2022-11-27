@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:01:07 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/24 19:04:20 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/27 05:57:58 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ const int	Form::getExecGrade(void)const
 
 void	Form::beSigned(Bureaucrat &src)
 {
-	if (src.getGrade() <= this->getSignGrade() && src.getGrade() <= this->getExecGrade() && !this->getFlag())
+	if (src.getGrade() <= this->getSignGrade() && !this->getFlag())
 	{
 		std::cout << src.getName() << " signed form: " << _name << std::endl;
 		this->_flag = true;
@@ -107,7 +107,7 @@ void	Form::beSigned(Bureaucrat &src)
 	}
 	else
 	{
-		std::cout << src.getName() << " cannot sign form: " << _name << ", because:";
+		std::cout << src.getName() << " cannot sign form: " << _name << ", because: ";
 		throw (Form::GradeTooLowException());
 	}
 }
@@ -122,6 +122,11 @@ const char	*Form::GradeTooLowException::what()
     return ("Grade too low![Form]");
 }
 
+const char	*Form::FormFalseException::what()
+{
+    return ("Form status false![Form]");
+}
+
 std::ostream	&operator<<(std::ostream &o, Form &src)
 {
 	std::string tmp;
@@ -133,4 +138,9 @@ std::ostream	&operator<<(std::ostream &o, Form &src)
 	o << "name: " << src.getName() << ", Form exec_grade: " << src.getExecGrade() \
 	<< ", sign_grade: " << src.getSignGrade() << ", bool is: " << tmp;
 	return (o);
+}
+
+void	Form::execute(Bureaucrat const &executor) const
+{
+	(void)executor;
 }
