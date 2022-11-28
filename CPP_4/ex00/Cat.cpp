@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:16:14 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/16 15:59:15 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/28 18:30:29 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,15 @@ Cat::~Cat()
 
 Cat &Cat::operator=(const Cat &src)
 {
-	*this = src;
+	if (this != &src)
+	{
+		type = src.getType();
+		std::cout << "Cat copy operator called" << std::endl;
+	}
 	return (*this);
 }
 
 void	Cat::makeSound()const
 {
-	std::cout << "type = " << this->type << ": miau" << std::endl;
+	std::cout << this->type << ": miau" << std::endl;
 }

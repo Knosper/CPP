@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:16:53 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/16 15:59:13 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/28 18:30:49 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,15 @@ Dog::~Dog()
 Dog &Dog::operator=(const Dog &src)
 {
 	*this = src;
+	if (this != &src)
+	{
+		type = src.getType();
+		std::cout << "Dog copy operator called" << std::endl;
+	}
 	return (*this);
 }
 
 void	Dog::makeSound()const
 {
-	std::cout << "type = " << this->type << ": woof woof" << std::endl;
+	std::cout << this->type << ": woof woof" << std::endl;
 }

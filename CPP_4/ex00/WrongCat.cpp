@@ -6,19 +6,19 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 17:37:56 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/16 15:57:40 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/28 19:02:55 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "WrongCat.hpp"
 
-WrongCat::WrongCat(): Animal()
+WrongCat::WrongCat(): WrongAnimal()
 {
-	type = "Fake Cat";
+	type = "WrongCat";
 	std::cout << "WrongCat constructed" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &c): Animal()
+WrongCat::WrongCat(const WrongCat &c): WrongAnimal()
 {
 	*this = c;
 	std::cout << "WrongCat copied" << std::endl;
@@ -31,11 +31,15 @@ WrongCat::~WrongCat()
 
 WrongCat &WrongCat::operator=(const WrongCat &src)
 {
-	*this = src;
+	if (this != &src)
+	{
+		type = src.getType();
+		std::cout << "WrongCat copy operator called" << std::endl;
+	}
 	return (*this);
 }
 
 void	WrongCat::makeSound()const
 {
-	std::cout << "Fake CAT Wiauz" << std::endl;
+	std::cout << type << ": Wiauz" << std::endl;
 }
