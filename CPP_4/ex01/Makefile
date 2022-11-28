@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+         #
+#    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 16:11:32 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/17 22:03:07 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/11/29 00:00:12 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC =	main.cpp	\
 		Dog.cpp	\
 		Cat.cpp	\
 		WrongCat.cpp	\
+		WrongAnimal.cpp	\
 		WrongDog.cpp	\
 		Brain.cpp
 

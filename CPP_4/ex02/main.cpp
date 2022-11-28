@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:11:18 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/16 16:41:22 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/11/29 00:19:45 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,30 @@
 # include "Dog.hpp"
 # include "Brain.hpp"
 
-int main()
+int	main()
 {
-	Dog *a = new Dog();
-	// Cat *a = new Cat();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	a->setIdea(0, "I have to sniff it");
-	a->setIdea(1, "I have to pee on it");
-	a->setIdea(2, "I have to sniff it again");
-	a->setIdea(101, "some shit");
+	delete j;
+	delete i;
 
-	Dog *b = new Dog(*a);
-	if (b == NULL)
+	int	k = 0;
+	Animal	*list[100];
+	while (k < 100)
 	{
-		std::cerr << "Exiting the process now." << std::endl;
-		return (1);
+		if (k % 2 == 0)
+			list[k] = new Dog();
+		else
+			list[k] = new Cat();
+		std::cout << "the " << k + 1 << "th Animal created" << std::endl << "----------------------------------" << std::endl;
+		k++;
 	}
-
-	std::cout << "The " << a->getType() << " a has the following ideas: " << std::endl;
-	a->getIdeas();
-	std::cout << std::endl;
-
-	delete(a);
-	std::cout << std::endl;
-
-	std::cout << "The " << b->getType() << " b has the following ideas: " << std::endl;
-	b->getIdeas();
-	std::cout << std::endl;
-
-	delete(b);
-	return (0);
+	while (k > 0)
+	{
+		k--;
+		delete list[k];
+		std::cout << "----------------------------------" << std::endl;
+	}
+	return 0;
 }
