@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:29:39 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/01 01:37:06 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/01 05:57:58 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ class Conversion
 {
 private:
 
+	bool	_c;
+	bool	_point;
 	double	_val;
 	int		_integer; 
 	int		_character;
@@ -27,7 +29,6 @@ private:
 	double	_d_n;
 	char	*_ptr_v;
 	char	*_ptr_d;
-	char	*_ptr_f;
 
 public:
 
@@ -35,7 +36,6 @@ public:
 	Conversion(const char *data);
 	~Conversion();
 	
-	void	fill_data();
 	void	fill_int(const std::string src);
 	void	fill_char(const std::string src);
 	void	fill_float(const std::string src);
