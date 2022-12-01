@@ -6,7 +6,7 @@
 #    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 00:45:52 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/28 00:47:39 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/11/29 21:14:59 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME = convert
 
 SRC =	main.cpp	\
 		Conversion.cpp	\
-
 
 OBJS = $(SRC:%.cpp=%.o)
 

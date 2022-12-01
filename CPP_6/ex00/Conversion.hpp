@@ -6,28 +6,46 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:29:39 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/28 01:07:22 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/01 01:37:06 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <string>
 # include <iostream>
 # include <cstdlib>
-# include <cmath>
+# include <math.h>
+# include <limits.h>
 
 class Conversion
 {
 private:
-	int		_integer;
-	char	_character;
+
+	double	_val;
+	int		_integer; 
+	int		_character;
 	float	_f_n;
 	double	_d_n;
+	char	*_ptr_v;
+	char	*_ptr_d;
+	char	*_ptr_f;
+
 public:
 
 	Conversion();
+	Conversion(const char *data);
 	~Conversion();
-	void	fill_data(const std::string src);
+	
+	void	fill_data();
+	void	fill_int(const std::string src);
+	void	fill_char(const std::string src);
+	void	fill_float(const std::string src);
+	void	fill_double(const std::string src);
+	
 	int		getInt() const;
 	char	getChar() const;
 	float	getFloat() const;
+	double	getDouble() const;
+
 };
+
+std::ostream &operator<<(std::ostream &o, Conversion const &p);

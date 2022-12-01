@@ -6,26 +6,30 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:29:37 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/28 01:35:31 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/01 01:34:26 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Conversion.hpp"
-# include <stdio.h>
 
 int	main(int argc, char **argv)
 {
-	Conversion	A;
-	int			i = 1;
+	int		i;
 
+	if (argc < 2)
+	{
+		std::cout << "Invalid args" << std::endl;
+		return (1);
+	}
+	i = 1;
 	while (argv[i])
 	{
-		A.fill_data(argv[i]);
-		std::cout << "Int == " << A.getInt() << std::endl;
-		std::cout << "Char == " << A.getChar() << std::endl;
-		//printf("Hier = %c\n", A.getChar());
-		std::cout << "Float == " << A.getFloat() << std::endl;
-		//std::cout << "Int == " << A.getInt() << std::endl;
+		Conversion	A(argv[i]);
+		A.fill_int(argv[i]);
+		A.fill_char(argv[i]);
+		A.fill_float(argv[i]);
+		A.fill_double(argv[i]);
+		//std::cout << A << std::endl;
 		i++;
 	}
 	return (0);
