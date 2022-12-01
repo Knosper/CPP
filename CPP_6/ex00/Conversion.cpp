@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Conversion.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:29:37 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/01 06:17:20 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/01 23:00:45 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	Conversion::fill_int(const std::string src)
 {
 	if (src.length() == 1 && !isdigit(src[0]))
 	{
-		_integer = (int)src[0];
+		_integer = static_cast<int>(src[0]);
 		std::cout << "Int = [" << _integer << "]" << std::endl;
 		return ;
 	}

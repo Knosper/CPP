@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:16:53 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/29 00:04:49 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/01 22:59:18 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,12 @@ Dog::Dog(): Animal()
 {
 	type = "Dog";
 	ptr = new Brain();
-	std::cout << "Dog constructed" << std::endl;
+	if (!ptr)
+	{
+		std::cerr << ""
+	}
+	else
+		std::cout << "Dog constructed" << std::endl;
 }
 
 Dog::Dog(const Dog &c): Animal()
