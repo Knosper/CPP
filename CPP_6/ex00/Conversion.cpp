@@ -6,14 +6,13 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:29:37 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/01 06:10:26 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/01 06:17:20 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Conversion.hpp"
-#include <string.h>
 
-int	haschar(const char *s, char c)
+static int	haschar(const char *s, char c)
 {
 	int	i;
 
@@ -143,7 +142,7 @@ void	Conversion::fill_float(const std::string src)
 	_f_n = atof(src.c_str());
 	if (_c && !isdigit(src[0]))
 	{
-		std::cout << "1float = [" << (int)src[0] << ".0f]" << std::endl;
+		std::cout << "float = [" << (int)src[0] << ".0f]" << std::endl;
 	}
 	else if (floatCheck(src))
 		std::cout << "invalid float" << std::endl;

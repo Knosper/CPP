@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:29:39 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/01 05:57:58 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/01 06:16:02 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 # include <cstdlib>
 # include <math.h>
 # include <limits.h>
+#include <string.h>
 
 class Conversion
 {
 private:
 
 	bool	_c;
-	bool	_point;
 	double	_val;
 	int		_integer; 
 	int		_character;
