@@ -6,11 +6,25 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:29:37 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/02 05:26:33 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/02 05:45:14 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Conversion.hpp"
+
+static int	haschar(std::string s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 static int	checkString(const std::string s)
 {
@@ -122,9 +136,7 @@ int		Conversion::checkType()
 {
 	if (_input.length () == 0)
 		return (T_INVAL);
-	size_t _val[2];
-
-	if (_input == "nan" || _input == "inf" || _input == "-inf")
+	if (_input == "nan" || _input == "inf" || _input == "-inf" || _input == "+inf")
 	{
 		std::cout << "char: [impossible]" << std::endl;
 		std::cout << "int: [impossible]" << std::endl;
@@ -140,10 +152,23 @@ int		Conversion::checkType()
 		std::cout << "double: [nan]" << std::endl;
 		return (T_NAN);
 	}
-	else if (_input.length() == 1 && !isdigit(_input[0]) && isascii(_input[0]))
+	_int = std::atoi(_input.c_str());
+	_float = std::strtof(_input.c_str(), &_ptr);
+	if (_float > INT_MAX || _float < INT_MIN)
+		std::cout << "float said Int is overflowed | _float = " << _float << std::endl;
+	else
+		std::cout << "_float = " << _float << std::endl;
+	if (_input.length() == 1 && !isdigit(_input[0]) && isascii(_input[0]))
 		return (T_CHAR);
 	else if (checkString(_input) || checkPointVal(_input, &_val[0], &_val[1]) == T_INVAL)
 		return (T_INVAL);
+	else if (!haschar(_input, '.') && _val[0] < 11 && (_float < INT_MAX || _float > INT_MIN))
+	{
+		
+		std::cout << "first val = " << _val[0] << std::endl;
+		std::cout << "INT = " << _int << std::endl;
+		return (T_INT);
+	}
 	else if (_val[0] > 38 && _val[0] < 309)
 	{
 		/*_float = std::strtof(_input.c_str(), &tmp1);

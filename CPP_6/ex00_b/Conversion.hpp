@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:29:39 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/02 05:22:30 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/02 05:39:56 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ class Conversion
 {
 private:
 	const std::string _input;
-
+	char 	*_ptr;
+	size_t _val[2];
 	int		_type;
 	int		_int;
 	char	_char;
