@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
+/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 17:55:29 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/01 22:56:20 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/02 01:17:06 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,14 @@ Brain::Brain(const Brain &cp)
 Brain::~Brain()
 {
 	std::cout << "Brain closed" << std::endl;
+}
+
+void	Brain::setIdea(int i, const std::string s)
+{
+	if (i < 100 && i >= 0)
+		this->ideas[i] = s;
+	else
+		std::cout << "There is only space for 0-99 ideas!" << std::endl;
 }
 
 const std::string	Brain::getIdea(int i)const

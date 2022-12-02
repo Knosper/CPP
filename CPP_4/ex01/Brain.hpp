@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
+/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 17:55:12 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/01 22:56:36 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/02 01:11:10 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ public:
 	Brain &operator=(const Brain &src);
 
 	const std::string	getIdea(int i)const;
+	void				setIdea(int i, const std::string s);
 };
 

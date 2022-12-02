@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:16:57 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/28 23:59:59 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/02 01:16:23 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ public:
 	~Dog();
 
 	Dog &operator=(const Dog &src);
+	
+	void				setIdea(int i, const std::string s);
+	void			 	getIdeas();
 
 	void			makeSound()const;
 };

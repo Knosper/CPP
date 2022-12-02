@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:16:47 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/28 23:59:50 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/02 01:16:31 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,8 @@ public:
 
 	Cat &operator=(const Cat &src);
 
+	void				setIdea(int i, const std::string s);
+	void			 	getIdeas();
+	
 	void			makeSound()const;
 };
