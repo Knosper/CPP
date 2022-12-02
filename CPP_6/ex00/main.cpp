@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:29:37 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/01 05:48:54 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/02 21:14:23 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ int	main(int argc, char **argv)
 	while (argv[i])
 	{
 		Conversion	A(argv[i]);
-		A.fill_int(argv[i]);
-		A.fill_char(argv[i]);
-		A.fill_float(argv[i]);
-		A.fill_double(argv[i]);
+		std::cout << A << std::endl;
 		i++;
 	}
 	return (0);
