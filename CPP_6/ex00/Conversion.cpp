@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:29:37 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/02 23:52:37 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/03 00:32:07 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,15 @@ static int	checkString(const std::string s)
 	i = 0;
 	while (s[i])
 	{
+		if (s[i] == '+' || s[i] == '-')
+		{
+			if (i != 0)
+				return (1);
+		}
 		if (!isdigit(s[i]) && s[i] != '-' && s[i] != '+' && s[i] != '.' && s[i] != 'f')
+		{
 			c_char++;
+		}
 		if (s[i] == 'f')
 		{
 			f++;
@@ -59,6 +66,8 @@ static int	checkString(const std::string s)
 		{
 			p++;
 			if (p > 1 || i == 0 || i == s.length() - 1 || (i < s.length() - 1 && !isdigit(s[i + 1])))
+				return (1);
+			if (!isdigit(s[i - 1]))
 				return (1);
 		}
 		if (c_char > 0)
@@ -112,7 +121,7 @@ static int	checkPointVal(const std::string s, size_t *_val1, unsigned long *_val
 
 Conversion::Conversion()
 {
-	std::cout << std::endl << "default Conversation started" << std::endl << std::endl;
+	std::cout << std::endl << "default Conversation started without data" << std::endl << std::endl;
 }
 
 Conversion::Conversion(const char *data):_input(static_cast<std::string>(data))
@@ -140,7 +149,7 @@ Conversion::Conversion(const Conversion &cp):_input(cp.getInput())
 
 Conversion::~Conversion()
 {
-	std::cout << std::endl << "Conversation closed" << std::endl;
+	std::cout << "Conversation closed" << std::endl;
 }
 
 int		Conversion::checkType()
@@ -184,7 +193,6 @@ void	Conversion::start()
 	void (Conversion::*functionPTRS[])(void) = {&Conversion::fillChar, &Conversion::fillInt, &Conversion::fillFloat, &Conversion::fillDouble};
 	
 	(this->*functionPTRS[_type - 1])();
-	
 	if (_type == T_CHAR)
 	{
 		_int = static_cast<int>(_char);
@@ -340,6 +348,8 @@ std::ostream	&operator<<(std::ostream &o, Conversion const &p)
 	if (p.getError() == false)
 	{
 		val = strtod(p.getInput().c_str(), &tmp);
+		if (val - static_cast<double>(p.getChar()) != 0 && p.getInput().length() == 1)
+			val = static_cast<double>(p.getChar());
 		if (((val >= 8 && val <= 12) || (val > 31 && val < 127)))
 			o << "char: '" << p.getChar() << "'" << std::endl;
 		else if (val > 126 || val < 0)
