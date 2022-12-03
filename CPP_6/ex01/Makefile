@@ -6,7 +6,7 @@
 #    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 00:45:52 by jjesberg          #+#    #+#              #
-#    Updated: 2022/12/03 00:48:58 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/12/03 02:13:17 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,10 +31,9 @@ $(NAME): $(OBJS)
 
 clean:
 	@rm -f *.o
-	rm -f main.d
+	@rm -f *.d
 
 fclean: clean
 	@rm -f $(NAME)
-	@rm -f *.d
 
 re: fclean all

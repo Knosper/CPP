@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:29:37 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/03 00:38:37 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/03 02:16:00 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,24 +193,28 @@ void	Conversion::start()
 	(this->*functionPTRS[_type - 1])();
 	if (_type == T_CHAR)
 	{
+		//std::cout << "convert from char" << std::endl;
 		_int = static_cast<int>(_char);
 		_float = static_cast<float>(_char);
 		_double = static_cast<double>(_char);
 	}
 	else if (_type == T_INT)
 	{
+		//std::cout << "convert from int" << std::endl;
 		_char = static_cast<char>(_int);
 		_float = static_cast<float>(_int);
 		_double = static_cast<double>(_int);
 	}
 	else if (_type == T_FLOAT)
 	{
+		//std::cout << "convert from float" << std::endl;
 		_int = static_cast<int>(_float);
 		_char = static_cast<char>(_float);
 		_double = static_cast<double>(_float);
 	}
 	else if (_type == T_DOUBLE)
 	{
+		//std::cout << "convert from double" << std::endl;
 		_int = static_cast<int>(_double);
 		_char = static_cast<char>(_double);
 		_double = static_cast<double>(_double);
