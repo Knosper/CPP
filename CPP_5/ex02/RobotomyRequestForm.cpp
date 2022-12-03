@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:08:33 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/27 06:19:29 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/03 02:04:48 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@
 Makes some drilling noises. Then, informs that <target> has been robotomized
 successfully 50% of the time. Otherwise, informs that the robotomy failed*/
 
-RobotomyRequest::RobotomyRequest():_target("default"),Form("RobotomyRequest",72,45)
+RobotomyRequest::RobotomyRequest():Form("RobotomyRequest",72,45),_target("default")
 {
 	std::cout << "default RobotomyRequest constructed" << std::endl;
 }
 
-RobotomyRequest::RobotomyRequest(std::string target):_target(target),Form("RobotomyRequest",72,45)
+RobotomyRequest::RobotomyRequest(std::string target):Form("RobotomyRequest",72,45),_target(target)
 {
 	std::cout << "RobotomyRequest constructed, target = " << _target << std::endl;
 	
 }
 
-RobotomyRequest::RobotomyRequest(const RobotomyRequest &cp):Form("RobotomyRequest",72,45)
+RobotomyRequest::RobotomyRequest(const RobotomyRequest &cp):Form("RobotomyRequest",72,45),_target(cp.getTarget())
 {
 	*this = cp;
 	std::cout << "copy RobotomyRequest constructed" << std::endl;

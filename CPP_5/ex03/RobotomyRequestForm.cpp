@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:08:33 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/27 08:33:44 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/03 02:10:08 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 Makes some drilling noises. Then, informs that <target> has been robotomized
 successfully 50% of the time. Otherwise, informs that the robotomy failed*/
 
-RobotomyRequestForm::RobotomyRequestForm():_target("default"),Form("RobotomyRequest",72,45)
+RobotomyRequestForm::RobotomyRequestForm():Form("RobotomyRequest",72,45),_target("default")
 {
 	std::cout << "default RobotomyRequest constructed" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target):_target(target),Form("RobotomyRequest",72,45)
+RobotomyRequestForm::RobotomyRequestForm(std::string target):Form("RobotomyRequest",72,45),_target(target)
 {
 	std::cout << "RobotomyRequest constructed, target = " << _target << std::endl;
 }

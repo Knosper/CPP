@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:29:37 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/03 00:32:07 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/03 00:38:37 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,13 @@ static int	checkString(const std::string s)
 		if (s[i] == 'f')
 		{
 			f++;
-			if (f > 1 || i != s.length() - 1)
+			if (f > 1 || i != static_cast<int>(s.length()) - 1)
 				return (1);
 		}
 		if (s[i] == '.')
 		{
 			p++;
-			if (p > 1 || i == 0 || i == s.length() - 1 || (i < s.length() - 1 && !isdigit(s[i + 1])))
+			if (p > 1 || i == 0 || i == static_cast<int>(s.length()) - 1 || (i < static_cast<int>(s.length()) - 1 && !isdigit(s[i + 1])))
 				return (1);
 			if (!isdigit(s[i - 1]))
 				return (1);
@@ -80,7 +80,6 @@ static int	checkString(const std::string s)
 static int	checkPointVal(const std::string s, size_t *_val1, unsigned long *_val2)
 {
 	int i = 0;
-	int j = 0;
 	*_val1 = 0;
 	*_val2 = 0;
 	size_t	tmp = 0;
@@ -182,14 +181,13 @@ int		Conversion::checkType()
 		return (T_INT);
 	else if (_val[0] > 38 && _val[0] < 309)
 		return (T_DOUBLE);
-	else if (_val[0] >= 0 && _val[0] < 39)
+	else if (_val[0] < 39)
 		return (T_FLOAT);
 	return (T_INVAL);
 }
 
 void	Conversion::start()
 {
-	int i = 0;
 	void (Conversion::*functionPTRS[])(void) = {&Conversion::fillChar, &Conversion::fillInt, &Conversion::fillFloat, &Conversion::fillDouble};
 	
 	(this->*functionPTRS[_type - 1])();

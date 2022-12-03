@@ -6,7 +6,7 @@
 #    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 00:45:52 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/29 21:14:59 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/12/03 02:10:58 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = convert
 SRC =	main.cpp	\
 		Conversion.cpp	\
 
-OBJS = $(SRC:%.cpp=%.o)
+OBJS = $(SRC:.cpp=.o)
 
 C_FLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -24,13 +24,14 @@ CC = c++
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(C_FLAGS) $(OBJS) -o $@
+	$(CC) $(C_FLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp %.d
+%.o: %.cpp
 	$(CC) $(C_FLAGS) -MMD -MP -c $< -o $@
 
 clean:
 	@rm -f *.o
+	@rm -f *.d
 
 fclean: clean
 	@rm -f $(NAME)

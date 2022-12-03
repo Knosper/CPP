@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:11:18 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/24 18:37:03 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/03 01:30:01 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ private:
 
     const std::string	_name;
     int             	_grade;
+	void				setGrade(int grade);
 
 public:
 
@@ -34,7 +35,6 @@ public:
     Bureaucrat();
     ~Bureaucrat();
 
-	void				setGrade(int grade);
 	void				signForm(Form &src);
 
 	const std::string	getName(void)const;

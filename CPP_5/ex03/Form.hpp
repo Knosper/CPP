@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:00:43 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/27 05:48:56 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/03 02:08:10 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,12 @@ public:
 	//getter
 	const std::string	getName(void)const;
 	bool				getFlag(void)const;
-	const int			getSignGrade(void)const;
-	const int			getExecGrade(void)const;
+	int					getSignGrade(void)const;
+	int					getExecGrade(void)const;
 
+	//operators
+	Form	&operator=(const Form &src);
+	
 	//exceptions
 	class GradeTooHighException : public std::exception 
 	{

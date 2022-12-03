@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:57:57 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/27 18:23:30 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/03 02:08:55 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ int	main()
 
 	Bureaucrat	A(1);
 	Intern 		someRandomIntern;
-	Form* 		rrf;
+	Form 		*rrf;
 
-	//rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-	//rrf = someRandomIntern.makeForm("presidential pardonForm", "Fry");
-	//rrf = someRandomIntern.makeForm("shrubbery creation", "Lila");
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	rrf = someRandomIntern.makeForm("presidential pardonForm", "Fry");
+	rrf = someRandomIntern.makeForm("shrubbery creation", "Lila");
 	A.signForm(*rrf);
 	A.executeForm(*rrf);
 	return (0);

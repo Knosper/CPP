@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
+/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 03:21:37 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/23 00:43:04 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/03 01:00:17 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,10 @@ FragTrap::FragTrap()
 	std::cout << "FragTrap " << name << ": got consructed" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &obj)
+FragTrap::FragTrap(const FragTrap &obj):ClapTrap(obj)
 {
-	if (this != &obj)
-	{
-		name = obj.name;
-		hit_p = obj.hit_p;
-		enrgie_p = obj.enrgie_p;
-		attack_d = obj.attack_d;
-		high_five = obj.high_five;
-		std::cout << "FragTrap: " << name << ": got copied" << std::endl;
-	}
+	*this = obj;
+	std::cout << "FragTrap " << name << ": got copied" << std::endl;
 }
 
 FragTrap::~FragTrap()

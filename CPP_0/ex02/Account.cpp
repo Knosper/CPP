@@ -6,7 +6,7 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:25:35 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/07 15:54:19 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/03 00:52:06 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	Account::checkAmount(void) const
 {
 	return (Account::_amount);
 }
+
 
 void	Account::_displayTimestamp(void)
 {

@@ -6,7 +6,7 @@
 #    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 22:05:11 by jjesberg          #+#    #+#              #
-#    Updated: 2022/11/27 08:20:41 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/12/03 02:06:14 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,11 +31,12 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(C_FLAGS) $(OBJS) -o $@
 
-%.o: %.cpp %.d
+%.o: %.cpp
 	$(CC) $(C_FLAGS) -MMD -MP -c $< -o $@
 
 clean:
 	@rm -f *.o
+	@rm -f *.d
 
 fclean: clean
 	@rm -f $(NAME)
