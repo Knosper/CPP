@@ -6,14 +6,17 @@
 #    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 00:45:52 by jjesberg          #+#    #+#              #
-#    Updated: 2022/12/03 17:54:13 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/12/03 18:55:27 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = con
 
 SRC =	main.cpp	\
-		Serial.cpp	\
+		Base.cpp	\
+		A.cpp		\
+		B.cpp		\
+		C.cpp
 
 OBJS = $(SRC:%.cpp=%.o)
 

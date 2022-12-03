@@ -6,26 +6,49 @@
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:29:37 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/03 18:48:26 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/03 20:38:31 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Serial.hpp"
+# include "Base.hpp"
+# include "A.hpp"
+# include "B.hpp"
+# include "C.hpp"
+# include <cstdlib>
+#include <unistd.h>
 
-int	main(int argc, char **argv)
+Base	*generate(void)
 {
-	Serial	A;
-	Data	*test;
+	srand(time(NULL));
+	int	n = rand() % 3 + 1;
+	switch(n)
+	{
+		case (1):
+			return (new A);
+		case (2):
+			return (new B);
+		case (3):
+			return (new C);
+	}
+	std::cout << "error" << std::endl;
+	return (NULL);
+}
 
-	A.setData("1234Test");
-	(void)argv;
-	(void)argc;
-	std::cout << A << std::endl;
+void	identify(Base *p)
+{
+	if (dynamic_cast<A*>(p))
+		std::cout << "Its 'A' Base Class" << std::endl;
+	else if (dynamic_cast<B*>(p))
+		std::cout << "Its 'B' Base Class" << std::endl;
+	else if (dynamic_cast<C*>(p))
+		std::cout << "Its 'C' Base Class" << std::endl;
+	delete p;
+}
 
-	uintptr_t tmp;
-	tmp = serialize(A.getData());
-	std::cout << "tmp: " << tmp << std::endl;
-	test = deserialize(tmp);
-	std::cout << test->name << std::endl;
+int	main()
+{
+	identify(generate());
+	usleep(999000);
+	identify(generate());
 	return (0);
 }
