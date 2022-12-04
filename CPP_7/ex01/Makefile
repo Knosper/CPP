@@ -5,20 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/28 00:45:52 by jjesberg          #+#    #+#              #
-#    Updated: 2022/12/03 20:41:11 by jjesberg         ###   ########.fr        #
+#    Created: 2022/12/03 20:41:18 by jjesberg          #+#    #+#              #
+#    Updated: 2022/12/04 02:44:50 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = base
+NAME = iter
 
 SRC =	main.cpp	\
-		Base.cpp	\
-		A.cpp		\
-		B.cpp		\
-		C.cpp
 
-OBJS = $(SRC:%.cpp=%.o)
+OBJS = $(SRC:.cpp=.o)
 
 C_FLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -27,7 +23,7 @@ CC = c++
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(C_FLAGS) $(OBJS) -o $@
+	$(CC) $(C_FLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
 	$(CC) $(C_FLAGS) -MMD -MP -c $< -o $@

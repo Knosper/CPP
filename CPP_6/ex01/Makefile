@@ -6,11 +6,11 @@
 #    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 00:45:52 by jjesberg          #+#    #+#              #
-#    Updated: 2022/12/03 17:54:13 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/12/03 20:41:04 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = con
+NAME = serial
 
 SRC =	main.cpp	\
 		Serial.cpp	\
