@@ -6,18 +6,17 @@
 #    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/03 20:41:18 by jjesberg          #+#    #+#              #
-#    Updated: 2022/12/04 02:46:31 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/12/06 01:10:35 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = array
 
-SRC =	main.cpp	\
-		Array.cpp	\
+SRC =	main.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
-C_FLAGS = -Wall -Wextra -Werror -std=c++98
+C_FLAGS = -Wall -Wextra -Werror -std=c++98 -Werror 
 
 CC = c++
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   Whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 01:46:27 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/04 01:57:37 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/06 01:13:17 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <string>
 
 template<typename S>
-
 void	swap(S &one, S &two)
 {
 	S tmp;
@@ -27,7 +26,6 @@ void	swap(S &one, S &two)
 }
 
 template<typename M>
-
 const M	&min(M &one, M &two)
 {
 	if (one < two)
@@ -36,7 +34,6 @@ const M	&min(M &one, M &two)
 }
 
 template<typename N>
-
 const N	&max(N &one, N &two)
 {
 	if (one > two)
