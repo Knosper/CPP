@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:16:53 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/28 18:30:49 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:41:49 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ Dog::~Dog()
 
 Dog &Dog::operator=(const Dog &src)
 {
-	*this = src;
 	if (this != &src)
 	{
 		type = src.getType();

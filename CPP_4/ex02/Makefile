@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 16:11:32 by jjesberg          #+#    #+#              #
-#    Updated: 2022/12/03 01:03:19 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/12/08 17:55:56 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ SRC =	main.cpp	\
 		Cat.cpp	\
 		WrongCat.cpp	\
 		WrongAnimal.cpp	\
-		WrongDog.cpp	\
 		Brain.cpp
 
 OBJS = $(SRC:%.cpp=%.o)
