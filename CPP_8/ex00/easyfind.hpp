@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 01:29:38 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/06 22:22:49 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/09 14:32:13 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,16 @@
 # include <iostream>
 # include <string>
 # include <algorithm>
-# include "easyfind.tpp"
+# include <vector>
 
 template<typename T>
 void		easyfind(T &data, int n);
+
+class NotFoundException : public std::exception
+{
+	public:
+		virtual const char *what() const throw()
+        {
+	        return ("Nothing found"); 
+        }
+};

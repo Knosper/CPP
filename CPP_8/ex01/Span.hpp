@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 00:32:38 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/07 02:27:17 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/09 14:52:05 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # pragma once
 
-# include <iostream>
-# include <string>
-#include <stdlib.h>
+#include <string>
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <iterator>
 
 class Span
 {
 private:
-	unsigned int	_N;
-	int				*_numbers;
-	int 			_pos;
+	unsigned int		_N;
+	std::vector<int>	_numbers;
+	int 				_pos;
 public:
 	Span();
 	Span(unsigned int N);
@@ -47,17 +49,17 @@ public:
 	class	ListFullException : public std::exception
 	{
 		public:
-			virtual const char *what();
+			virtual const char *what() const throw();
 	};
 	class	ListEmptyException : public std::exception
 	{
 		public:
-			virtual const char *what();
+			virtual const char *what() const throw();
 	};
 	class	ListIndexException : public std::exception
 	{
 		public:
-			virtual const char *what();
+			virtual const char *what() const throw();
 	};
 };
 

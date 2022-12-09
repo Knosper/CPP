@@ -3,20 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/03 20:41:18 by jjesberg          #+#    #+#              #
-#    Updated: 2022/12/07 00:31:53 by jjesberg         ###   ########.fr        #
+#    Updated: 2022/12/09 14:29:04 by jjesberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = easy
 
-SRC =	main.cpp	\
+SRC =	main.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
-C_FLAGS = -Wall -Wextra -std=c++98 #-Werror
+C_FLAGS = -Wall -Wextra -Werror -std=c++98 
 
 CC = c++
 

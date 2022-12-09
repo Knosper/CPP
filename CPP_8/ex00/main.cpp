@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 20:46:32 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/07 00:27:17 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/09 14:32:36 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include "easyfind.tpp"
 # include "easyfind.hpp"
-# include <vector>
-
 
 int main()
 {
@@ -25,7 +24,7 @@ int main()
 	vector.push_back(57);
 	try
 	{
-		easyfind<std::vector<int> >(vector, '1');
+		easyfind<std::vector<int> >(vector, 74);
 	}
 	catch (NotFoundException &e)
 	{

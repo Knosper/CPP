@@ -3,27 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.tpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 01:35:11 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/06 22:22:54 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/09 14:24:17 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # pragma once
 
 # include "easyfind.hpp"
-
-class NotFoundException : public std::exception
-{
-	public:
-		virtual const char *what();
-};
-
-const char *NotFoundException::what()
-{
-	return ("Nothing found");
-}
 
 template<typename T>
 void	easyfind(T &data, int n)

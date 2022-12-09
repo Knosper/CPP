@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 00:33:08 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/07 02:44:31 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/09 14:56:23 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Span.hpp"
 
-Span::Span():_N(10),_numbers(new int[10])
+Span::Span():_N(10)
 {
 	_pos = 0;
 	std::cout << "default Span[10] constructed" << std::endl;	
 }
 
-Span::Span(unsigned int N):_N(N),_numbers(new int[_N])
+Span::Span(unsigned int N):_N(N)
 {
 	_pos = 0;
 	std::cout << "Span[" << _N << "] constructed" << std::endl;	
@@ -26,7 +26,6 @@ Span::Span(unsigned int N):_N(N),_numbers(new int[_N])
 
 Span::~Span()
 {
-	delete[] _numbers;
 	std::cout << "Span destructed" << std::endl;
 }
 
@@ -36,7 +35,7 @@ void	Span::addNumber(int n)
 {
 	if (_pos >= static_cast<int>(_N))
 		throw (ListFullException());
-	_numbers[_pos] = n;
+	_numbers.push_back(n);
 	_pos += 1;
 }
 
@@ -195,17 +194,17 @@ std::ostream	&operator<<(std::ostream &o, const Span &src)
 }
 
 //Exceptions
-const char *Span::ListFullException::what()
+const char *Span::ListFullException::what() const throw()
 {
 	return ("No Space left");
 }
 
-const char *Span::ListEmptyException::what()
+const char *Span::ListEmptyException::what() const throw()
 {
 	return ("No span can be found");
 }
 
-const char *Span::ListIndexException::what()
+const char *Span::ListIndexException::what() const throw()
 {
 	return ("Index out of bound");
 }
