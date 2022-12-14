@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 06:52:33 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/27 08:13:02 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/10 00:55:06 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ public:
 	class InvalidFormException : public std::exception 
 	{
     	public:
-			virtual const char *what();
+			virtual const char *what() const throw();
 	};
 };
-

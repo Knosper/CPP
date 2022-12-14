@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:00:43 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/03 02:01:28 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/10 00:51:46 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,17 +50,17 @@ public:
 	class GradeTooHighException : public std::exception 
 	{
     	public:
-			virtual const char *what();
+			virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception 
 	{
     	public:
-			virtual const char *what();
+			virtual const char *what() const throw();
 	};
 	class FormFalseException : public std::exception 
 	{
     	public:
-			virtual const char *what();
+			virtual const char *what() const throw();
 	};
 };
 

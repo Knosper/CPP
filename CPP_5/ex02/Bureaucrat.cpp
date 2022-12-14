@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:11:14 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/27 06:41:55 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/10 00:51:08 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,12 +158,12 @@ std::ostream	&operator<<(std::ostream &o, Bureaucrat &var)
 	return (o);
 }
 
-const char	*Bureaucrat::GradeTooLowException::what()
+const char	*Bureaucrat::GradeTooLowException::what()  const throw()
 {
     return ("Limit: Grade too low!");
 }
 
-const char	*Bureaucrat::GradeTooHighException::what()
+const char	*Bureaucrat::GradeTooHighException::what()  const throw()
 {
     return ("Limit: Grade too high!");
 }

@@ -6,7 +6,7 @@
 /*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 00:33:08 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/09 14:56:23 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/09 23:30:32 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,21 @@
 Span::Span():_N(10)
 {
 	_pos = 0;
+	_numbers.reserve(_N);
 	std::cout << "default Span[10] constructed" << std::endl;	
 }
 
 Span::Span(unsigned int N):_N(N)
 {
 	_pos = 0;
-	std::cout << "Span[" << _N << "] constructed" << std::endl;	
+	_numbers.reserve(_N);
+	std::cout << "Span[" << _N << "] constructed" << std::endl;
+}
+
+Span::Span(const Span &cp)
+{
+	*this = cp;	
+	std::cout << "Span[" << _N << "] copied" << std::endl;
 }
 
 Span::~Span()
@@ -66,96 +74,61 @@ int		Span::getPos(void) const
 int		Span::getNum(int index) const
 {
 	if (index >= _pos)
-		throw (ListFullException());
+		throw (ListIndexException());
 	return (_numbers[index]);
 }
 
-int		Span::SmallestNum() const
+size_t		Span::shortestSpan() const
 {
 	int i = 0;
-	int	tmp;
 	if (_pos == 0)
 		throw (ListEmptyException());
-	tmp = _numbers[i];
-	while (i < _pos)
+	else if (_pos == 1)
+		throw (NoSpanPossible());
+	std::vector<int> tmp(_numbers);
+	std::sort (tmp.begin(), tmp.end());
+	std::vector<int>::iterator	first = tmp.begin();
+	std::vector<int>::iterator	second = tmp.begin() + 1;
+	size_t ret = _numbers[i + 1] - _numbers[i];
+	while (second != tmp.end())
 	{
-		if (_numbers[i] < tmp)
-			tmp = _numbers[i];
+		if (static_cast<size_t>(second[i] - first[i]) > UINT_MAX)
+		{
+			std::cout << "span too big" << std::endl;
+			return (0);
+		}
+		else if (static_cast<size_t>(second[i] - first[i]) < ret)
+			ret = second[i] - first[i];
 		i++;
 	}
-	return (tmp);
+	return (ret);
 }
 
-int		Span::BiggestNum() const
+size_t		Span::longestSpan() const
 {
 	int i = 0;
-	int	tmp = 0;
+	std::cout << "pos = " << _pos << std::endl;
 	if (_pos == 0)
 		throw (ListEmptyException());
-	tmp = _numbers[i];
-	while (i < _pos)
+	else if (_pos == 1)
+		throw (NoSpanPossible());
+	std::vector<int> tmp(_numbers);
+	std::sort (tmp.begin(), tmp.end());
+	std::vector<int>::iterator	first = tmp.begin();
+	std::vector<int>::iterator	second = tmp.begin() + 1;
+	size_t ret = _numbers[i + 1] - _numbers[i];
+	while (second != tmp.end())
 	{
-		if (_numbers[i] > tmp)
-			tmp = _numbers[i];
-		i++;
-	}
-	return (tmp);
-}
-
-int		Span::shortestSpan() const
-{
-	int i = 0;
-	int j = 0;
-	int res = 0;
-	int res2 = 0;
-	if (_pos <= 1)
-		throw (ListEmptyException());
-	while (i < _pos)
-	{
-		while (j < _pos)
+		if (static_cast<size_t>(second[i] - first[i]) > UINT_MAX)
 		{
-			if (j == i)
-				j++;
-			if (j < _pos && _numbers[j] > _numbers[i])
-			{
-				res = _numbers[j] - _numbers[i];
-				if (res2 == 0 || res2 > res)
-					res2 = res;
-			}
-			j++;
+			std::cout << "span too big" << std::endl;
+			return (0);
 		}
-		j = 0;
+		else if (static_cast<size_t>(second[i] - first[i]) > ret)
+			ret = second[i] - first[i];
 		i++;
 	}
-	return (res2);
-}
-
-int		Span::longestSpan() const
-{
-	int i = 0;
-	int j = 0;
-	int res = 0;
-	int res2 = 0;
-	if (_pos <= 1)
-		throw (ListEmptyException());
-	while (i < _pos)
-	{
-		while (j < _pos)
-		{
-			if (j == i)
-				j++;
-			if (j < _pos && _numbers[j] > _numbers[i])
-			{
-				res = _numbers[j] - _numbers[i];
-				if (res2 == 0 || res2 < res)
-					res2 = res;
-			}
-			j++;
-		}
-		j = 0;
-		i++;
-	}
-	return (res2);
+	return (ret);
 }
 
 //operators
@@ -200,6 +173,11 @@ const char *Span::ListFullException::what() const throw()
 }
 
 const char *Span::ListEmptyException::what() const throw()
+{
+	return ("List is empty");
+}
+
+const char *Span::NoSpanPossible::what() const throw()
 {
 	return ("No span can be found");
 }

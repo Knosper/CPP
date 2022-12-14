@@ -6,7 +6,7 @@
 /*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 00:32:38 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/09 14:52:05 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/09 23:27:50 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,8 @@ public:
 	int		getSize(void) const;
 	int		getPos(void) const;
 	int		getNum(int index) const;
-	int		shortestSpan() const;
-	int		longestSpan() const;
-	int		SmallestNum() const;
-	int		BiggestNum() const;
+	size_t	shortestSpan() const;
+	size_t	longestSpan() const;
 
 	//operator
 	Span	&operator=(const Span &src);
@@ -57,6 +55,11 @@ public:
 			virtual const char *what() const throw();
 	};
 	class	ListIndexException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
+	class	NoSpanPossible : public std::exception
 	{
 		public:
 			virtual const char *what() const throw();

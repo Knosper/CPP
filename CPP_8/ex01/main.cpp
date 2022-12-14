@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 20:46:32 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/07 02:39:43 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/09 23:23:35 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main() 
 {
-	Span sp;
+	Span sp(1);
 	sp.fillSpan();
 	try
 	{
@@ -29,6 +29,10 @@ int main()
 		std::cout << sp.longestSpan() << std::endl;
 	}
 	catch(Span::ListEmptyException &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	catch(Span::NoSpanPossible &e)
 	{
 		std::cerr << e.what() << '\n';
 	}

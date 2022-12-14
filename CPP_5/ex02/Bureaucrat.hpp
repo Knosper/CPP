@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:11:18 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/11/27 05:34:40 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/10 00:51:19 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ public:
 	class GradeTooHighException : public std::exception 
 	{
     	public:
-			virtual const char * what ();
+			virtual const char * what () const throw();
 	};
 	class GradeTooLowException : public std::exception 
 	{
     	public:
-			virtual const char * what ();
+			virtual const char * what () const throw();
 	};
 };
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:01:07 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/03 02:09:08 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/10 00:53:59 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,17 +112,17 @@ void	Form::beSigned(Bureaucrat &src)
 	}
 }
 
-const char	*Form::GradeTooHighException::what()
+const char	*Form::GradeTooHighException::what() const throw()
 {
 	return ("Grade too high![Form]");
 }
 
-const char	*Form::GradeTooLowException::what()
+const char	*Form::GradeTooLowException::what() const throw()
 {
     return ("Grade too low![Form]");
 }
 
-const char	*Form::FormFalseException::what()
+const char	*Form::FormFalseException::what() const throw()
 {
     return ("Form status false![Form]");
 }
