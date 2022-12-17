@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 02:48:04 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/06 01:02:15 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/15 03:22:02 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ public:
 	class SizeTooHighException : public std::exception
 	{
     	public:
-			virtual const char * what ();
+			virtual const char * what () const throw();
 	};
 	class IndexRangeException : public std::exception
 	{
     	public:
-			virtual const char * what ();
+			virtual const char * what () const throw();
 	};
 };

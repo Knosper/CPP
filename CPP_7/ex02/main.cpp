@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 20:46:32 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/06 01:10:03 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/15 03:44:42 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,8 @@ int main()
 	B.PrintArray();
 
 	std::cout << "Arraysize = " << B.size() << std::endl;
+	int	*a = new int;
+	*a = 102;
+	std::cout << *a << std::endl;
 	return 0;
 }

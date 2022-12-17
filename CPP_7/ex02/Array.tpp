@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjesberg <jjesberg@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 02:49:42 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/06 01:11:02 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/15 03:21:48 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,13 +138,13 @@ void	Array<T>::PrintArray(void)
 
 //Exception
 template< typename T >
-const char	*Array<T>::SizeTooHighException::what()
+const char	*Array<T>::SizeTooHighException::what() const throw()
 {
 	return ("Size too high![Array]");
 }
 
 template< typename T >
-const char	*Array<T>::IndexRangeException::what()
+const char	*Array<T>::IndexRangeException::what() const throw()
 {
 	return ("Index outside range![Array]");
 }

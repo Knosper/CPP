@@ -6,7 +6,7 @@
 /*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 00:32:38 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/09 23:27:50 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/17 19:28:31 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ public:
 	//setter
 	void	addNumber(int n);
 	void	fillSpan();
+	void	fillSpan(unsigned int range);
 
 	//getter
 	int		getSize(void) const;

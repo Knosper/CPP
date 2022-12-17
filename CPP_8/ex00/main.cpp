@@ -6,7 +6,7 @@
 /*   By: jjesberg <j.jesberger@heilbronn.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 20:46:32 by jjesberg          #+#    #+#             */
-/*   Updated: 2022/12/09 14:32:36 by jjesberg         ###   ########.fr       */
+/*   Updated: 2022/12/17 17:15:50 by jjesberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
 	vector.push_back(57);
 	try
 	{
-		easyfind<std::vector<int> >(vector, 74);
+		easyfind<std::vector<int> >(vector, 49);
 	}
 	catch (NotFoundException &e)
 	{
