@@ -38,3 +38,27 @@ int main()
 	std::stack<int> s(mstack);
 	return 0;
 }
+/*
+
+int main()
+{
+	MutantStack<int> mstack;
+
+	mstack.push(5);
+	mstack.push(3);
+	mstack.push(8);
+	mstack.push(9);
+	mstack.push(1);
+
+	std::cout << "Mstack contains: ";
+	for (MutantStack<int>::iterator it = mstack.begin(); it != mstack.end(); ++it)
+		std::cout << *it << " ";
+	std::cout << std::endl;
+
+	std::cout << "Mstack in reverse order: ";
+	for (MutantStack<int>::reverse_iterator it = mstack.rbegin(); it != mstack.rend(); ++it)
+		std::cout << *it << " ";
+	std::cout << std::endl;
+	return 0;
+}
+*/
